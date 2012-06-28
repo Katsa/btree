@@ -70,16 +70,15 @@ Assuming 1 time step = 1 nanosecond:
 !SLIDE center
 ##If self-balancing binary trees already provide all operations in O(log n), what do we need B-trees for?
 
-!SLIDE subsection
+!SLIDE
 # Memory locality
 The limits of the RAM model
 
-!SLIDE subsection
 * memory access is not constant
   * disk blocks
   * virtual memory pages
-  * cache lines
-* when accessing values sequentially, performance will benefit if these values are stored in nearby memory locations.
+  * (cache lines)
+* when accessing values sequentially, performance will benefit if these values are stored in nearby memory locations
 
 !SLIDE subsection
 # B-tree definition
