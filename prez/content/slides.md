@@ -191,5 +191,29 @@ If the root node is empty, replace it with its unique child.
 
 ![](algo_10_delete_empty_root.jpg)
 
+!SLIDE center
+# Bulk load
+Construct a tree from scratch, when all the keys are known in advance.
+
+!SLIDE center
+# Bulk load - leaf nodes
+* sort the keys
+* create an initial set of nodes. All must have one extra key, _except the last one_
+
+![](algo_11_bulkload.jpg)
+
+!SLIDE center
+# Bulk load - create upper level
+* take the last key of each existing node (except the last) to fill the new nodes
+* again, overfill the new nodes, except the last
+
+![](algo_12_bulkload.png)
+
+!SLIDE center
+# Bulk load - termination
+Rince and repeat until there is one node left.
+
+![](algo_13_bulkload.png)
+
 !SLIDE subsection
 # Your turn!
