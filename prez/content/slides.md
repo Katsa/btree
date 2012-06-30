@@ -92,12 +92,6 @@ The limits of the RAM model
 
 ![](btree_m4.jpg)
 
-!SLIDE center
-# Implementation
-* children: array of size m + 1 (extra bucket will simplify some operations)
-* keys: array of size m/2 + 1
-* use raw types, expose typesafe API
-
 !SLIDE subsection
 # Uses of B-trees
 
@@ -203,17 +197,29 @@ Construct a tree from scratch, when all the keys are known in advance.
 ![](algo_11_bulkload.jpg)
 
 !SLIDE center
-# Bulk load - create upper level
+# Bulk load - create next level
 * take the last key of each existing node (except the last) to fill the new nodes
-* again, overfill the new nodes, except the last
+* again, overfill the new nodes, except the last one
 
 ![](algo_12_bulkload.png)
 
 !SLIDE center
 # Bulk load - termination
-Rince and repeat until there is one node left.
+Rince and repeat, until there is one node left.
 
 ![](algo_13_bulkload.png)
 
 !SLIDE subsection
-# Your turn!
+# Your turn
+
+!SLIDE center
+# `btree/todo`
+* fill the implementation to make all unit tests pass
+* if you get stuck: `btree/solution`
+
+!SLIDE center
+# Implementation details
+* keys: array of size m + 1 (extra bucket will simplify handling of overfilled nodes)
+* children: array of size m + 2
+* expose typesafe API, use raw types internally
+* PS: toy implementation, not for real-life usage
