@@ -1,0 +1,71 @@
+# Algorithms
+[http://en.wikipedia.org/wiki/B-tree#Algorithms](prez/contenthttp://en.wikipedia.org/wiki/B-tree#Algorithms)
+[http://fr.wikipedia.org/wiki/Arbre_B#Op.C3.A9rations](prez/contenthttp://fr.wikipedia.org/wiki/Arbre_B#Op.C3.A9rations)
+
+## Search
+Find target node, then key (sequential or binary search)
+
+![](prez/contentalgo_01_contains.jpg)
+
+## Add
+When target node not full: insert key, moving other keys if necessary
+
+![](prez/contentalgo_02_add_when_room.jpg)
+
+When target node full: move median key to upper level, split remaining keys into two child nodes
+
+![](prez/contentalgo_03_add_with_split.jpg)
+
+Splits can bubble up the tree
+
+![](prez/contentalgo_04_propagate_splits.jpg)
+
+## Remove
+Removing from a leaf: simply delete the key.
+
+![](prez/contentalgo_05_remove_from_leaf.jpg)
+
+Removing from an internal node: swap key with righmost leaf key of left child, or leftmost leaf key of right child => back to previous case
+
+![](prez/contentalgo_06_swap_rightmost_left_leaf.jpg)
+
+A removal can leave the tree in an inconsistent state. There are various ways to rebalance it
+
+# Rebalance
+Steal from a sibling that has enough keys, "rotating" through the parent
+
+![](prez/contentalgo_07_rebalance_borrow_sibling.jpg)
+
+If there are no siblings or they both have the minimum cardinality, merge with a sibling, stealing the separating key from the parent
+
+![](prez/contentalgo_08_rebalance_merge_parent_key.jpg)
+
+Merges also propagate up the tree
+
+![](prez/contentalgo_09_propagate_merges.jpg)
+
+## Remove (cont'd)
+If the root node is empty, replace it with its unique child.
+
+![](prez/contentalgo_10_delete_empty_root.jpg)
+
+## Bulk load
+Construct a tree from scratch, when all the keys are known in advance.
+
+### Leaf nodes
+* sort the keys
+* create an initial set of nodes. All must have one extra key, _except the last one_
+
+![](prez/contentalgo_11_bulkload.jpg)
+
+## Create next level
+* take the last key of each existing node (except the last) to fill the new nodes
+* again, overfill the new nodes, except the last one
+
+![](prez/contentalgo_12_bulkload.png)
+
+## Termination
+Rince and repeat, until there is one node left.
+
+![](prez/contentalgo_13_bulkload.png)
+
