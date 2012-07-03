@@ -1,11 +1,15 @@
 # Algorithms
 [http://en.wikipedia.org/wiki/B-tree#Algorithms](http://en.wikipedia.org/wiki/B-tree#Algorithms)
+
 [http://fr.wikipedia.org/wiki/Arbre_B#Op.C3.A9rations](http://fr.wikipedia.org/wiki/Arbre_B#Op.C3.A9rations)
+
+https://github.com/olim7t/btree/blob/master/prez/content/algo_01_contains.jpg
+https://github.com/olim7t/btree/blob/master/prez/content/algo_01_contains.jpg
 
 ## Search
 Find target node, then key (sequential or binary search)
 
-![](prez/content/algo_01_contains.jpg)
+<img src="prez/content/algo_01_contains.jpg"/>
 
 ## Add
 When target node not full: insert key, moving other keys if necessary
