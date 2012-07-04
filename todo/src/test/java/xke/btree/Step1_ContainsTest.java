@@ -9,7 +9,6 @@ public class Step1_ContainsTest extends OneDegreeIntegerBTreeTest {
     @Test
     public void shouldSucceedWhenElementIsInRootNode() {
         // Given
-        @SuppressWarnings("unchecked")
         Node<Integer> root = nodeWithKeys(1, 2).build();
 
         // When
@@ -22,7 +21,6 @@ public class Step1_ContainsTest extends OneDegreeIntegerBTreeTest {
     @Test
     public void shouldFailWhenJustARootNodeAndElementNotInside() {
         // Given
-        @SuppressWarnings("unchecked")
         Node<Integer> root = nodeWithKeys(2, 4).build();
 
         // When
@@ -35,7 +33,6 @@ public class Step1_ContainsTest extends OneDegreeIntegerBTreeTest {
     @Test
     public void shouldSucceedWhenElementIsInChildNode() {
         // Given
-        @SuppressWarnings("unchecked")
         Node<Integer> root = nodeWithKeys(3, 6).withChildren(
                 nodeWithKeys(1, 2).build(),
                 nodeWithKeys(4, 5).build(),
@@ -52,7 +49,6 @@ public class Step1_ContainsTest extends OneDegreeIntegerBTreeTest {
     @Test
     public void shouldFailWhenElementWouldBelongToChildNodeButIsNotPresent() {
         // Given
-        @SuppressWarnings("unchecked")
         Node<Integer> root = nodeWithKeys(4, 8).withChildren(
                 nodeWithKeys(1, 3).build(),
                 nodeWithKeys(5, 7).build(),
